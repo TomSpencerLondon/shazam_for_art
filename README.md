@@ -1,74 +1,83 @@
-## Shazam for art
+## Artvark - (Shazam for art)
 
-### Machine-Learning-Practice
+Web application which uses machine learning to identify the artist from a previously unseen image of a painting.
 
-[Based on this tutorial](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/)
+### Getting started
 
-## This Practice looks at:
+We hosted the web app locally so to get it up and running you will need to:
 
-1. Installing the Python and SciPy platform.
-2. Loading the dataset.
-3. Summarizing the dataset.
-4. Visualizing the dataset.
-5. Evaluating some algorithms.
-6. Making some predictions.
+* Install Python 3
+```
+brew install python3
+brew postinstall python3
+```
+* Install numpy and scipy
+```
+pip3 install --user numpy
+pip3 install --user scipy
+```
+* Install Scikit-Learn
+```
+pip3 install -U scikit-learn
+```
 
-## We installed the following:
+* Install Scikit Image
+```
+pip install -U scikit-image
+```
+* Install Django
+```
+pip3 install django
+```
+Clone this repo and navigate to ./imageuploader/manage.py
 
-* scipy
-* numpy
-* matplotlib
-* pandas
-* sklearn
+Apply the migrations
 
+```
+python3 manage.py migrate
+```
+Run the server
 
-1. Import Libraries
-2. Load Dataset
-3. Get visualisation on the data
+```
+python3 manage.py runserver
+```
 
-![screen shot 2017-12-05 at 14 15 49](https://user-images.githubusercontent.com/27693622/33612716-62f8bb24-d9ca-11e7-900d-cf429e13afa9.png)
+Open your browser and head to http://127.0.0.1:8000/images
 
-![screen shot 2017-12-05 at 14 15 59](https://user-images.githubusercontent.com/27693622/33612755-8385d26e-d9ca-11e7-95a5-6d8c9dbaf97d.png)
+Upload an image of a painting and see how it does!
 
+## Built with
 
-## Tuesday:
-We set out to answer these three key questions:
-  1. Which feature extraction to do first? HOG, Pixel, Colour Histogram etc
-  2. What is the order of the scikit pipeline?
-  3. How does classification work?
-      - Do we implement 'supervised'
-      - Do we implement 'unsupervised'
-  4. Imported algorithm from scikit-learn to process an 'unseen' image vs our image bank and return a value. 0 => Lowry, 1 => Turner. Our program successfully assigned the correct value to the unseen image.
-  5. MVP reached
-  
-## Wednesday: 
-  We included and compared 3 algorithms to check the artist of a painting. From sklearn we imported DecisionTree, SVM and Neural_Network. The results were as follows: 
+* [Python3](https://www.python.org/download/releases/3.0/)
+* [Django](https://www.djangoproject.com/) - Web Framework for Python
+* [PyTest](https://docs.pytest.org/en/latest/) - Testing Framework
+* [Scikit Image](http://scikit-image.org/) - Image Processing in Python
+* [Scikit Learn](http://scikit-learn.org/stable/) - Machine Learning in Python
 
-![screen shot 2017-12-08 at 10 56 07](https://user-images.githubusercontent.com/27693622/33763499-9d63ab94-dc08-11e7-8274-a5e277f8d2b9.png)
+## Overview of Project
 
-At a glance svm_pixels appeared to be the most effective algorithm in terms of predicting the correct artist. This was a big break through as we had achieved 50% accuracy. 
+The project was Ed's idea and we joined together as a group of four to work on it as our final project in Weeks 11 and 12 of Makers Academy. The aim was to learn Python, learn about machine learning and have fun. We managed loads of all three!
 
-## Thursday: 
-We tested existing code and created an effective TDD with higher test coverage in our analysis branch. We also researched Django using tutorials and began to build our front end website with Django. 
+In rough chronolgoical order we focussed on:
 
+* MVP - Using Python Scripts to scrape images, scikit image to process them and skicit learn to generate a model and make a prediction.
+* Improving test coverage
+* Accuracy improvement by altering the image data passed to the ML algo and changing the ML algos
+* Persisting the model
+* Building the Django Framework with TDD
+* Joining the Web App with the ML logic
+* Styling and User experience
 
-## Friday: 
-We refactored existing code and increased test coverage. We continued with Django progressing into building a simple image upload form
+## Where would we take it next?
 
+The aspiration would certainly have been to break into the Scikit Learn machine learning algorithms and replace one of them with our own.
+Even if it was just a very 'simple' perceptron it would have given us really valuable insight into the detail of ML algos.
 
-## Monday:
-We built a Django web app, complete with testing and began implementing some styling
-We continued to refine the machine learning and improve on our rate of probability 
+It would also be extremely exciting to continue the work on image processing to either use more of the feature extraction functionality of scikit learn to try and improve accuracy and also to perhaps pivot this project to try and identify whether there was a face in a painting. 
 
-## Tuesday:
-We set out to complete a few key tasks:
-  1. Add the remainig features for the app - iRobArt, art movement, art recommendations based on input
-  2. Styling the front end
-  3. Connecting the front end with the logic an machine learning
-  4. Prepare the presentation - to get started and brainstorm ideas
-  
+## Authors
 
-
-
-
-
+* Tom Spencer
+* Ed Lowther
+* Rory Collins
+* Tim Jones
